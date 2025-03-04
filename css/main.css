@@ -1,0 +1,197 @@
+/* Start variables */
+:root {
+    --main-background-color: #282726;
+    --main-green-color: #10a95b;
+    --mian-red-color: #ec5d49;
+    --main-text-color: #f9f4da;
+    --alt-text-color: #1e1e1e;
+    --main-border-color: #d7d7d7;
+}
+/* End variables */
+
+/* Start global rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Hanken Grotesk", serif;
+    background-color: #1e1d1c;
+    overflow-x: hidden;
+}
+.game {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.game .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    padding: 50px 30px;
+    width: 100%;
+    max-width: 600px;
+    overflow-y: auto;
+}
+/* End global rules */
+
+/* Start header */
+header {
+    text-align: center;
+    font-weight: 500;
+}
+header .heading {
+    font-size: 28px;
+    margin-block: 0 6px;
+}
+header p {
+    color: #8e8e8e;
+    max-width: 350px;
+    margin: 0;
+}
+/* End header */
+
+/* Start Status */
+.status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    min-height: 60px;
+    padding: 6px;
+    margin-block: 30px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+.status.won {
+    background-color: var(--main-green-color);
+}
+.status.lost {
+    background-color: #ba2a2a;
+}
+.status.farewell {
+    background-color: #7a5ea7;
+    border: 2px dashed #323232;
+    font-style: italic;
+    font-weight: 400;
+}
+.status h2 {
+    margin: 0;
+    font-size: 20px;
+}
+.status p {
+    margin: 0;
+    text-align: center;
+}
+/* End Status */
+
+/* Start Languages */
+.language-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+    max-width: 300px;
+}
+.language-chips .chip {
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+}
+.language-chips .chip.lost::before {
+    content: "💀";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    left: 0;
+    top: 0;
+    background-color: rgb(0 0 0 / 0.7);
+}
+/* End Languages */
+
+/* Start letter inputs  */
+.letter-inputs {
+    margin-block: 35px;
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+}
+.letter-inputs .input {
+    display: grid;
+    place-items: center;
+    padding: 6px;
+    width: 40px;
+    height: 40px;
+    background-color: #323232;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #f9f4da;
+}
+.letter-inputs .input.not-guessed {
+    color: var(--mian-red-color);
+}
+/* End letter inputs  */
+
+/* Start Keyboard */
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 4px 0;
+}
+.keyboard.game-over {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.keyboard .letter {
+    display: grid;
+    place-items: center;
+    padding: 6px;
+    width: 40px;
+    height: 40px;
+    background-color: #fcba29;
+    color: var(--alt-text-color);
+    border: 2px solid var(--main-border-color);
+    border-radius: 4px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+}
+.keyboard .letter.correct {
+    background-color: var(--main-green-color);
+}
+.keyboard .letter.wrong {
+    background-color: var(--mian-red-color);
+}
+/* End Keyboard */
+
+/* Start new game button */
+.newgame-btn {
+    width: 230px;
+    height: 40px;
+    padding: 6px 12px;
+    margin-top: 35px;
+    background-color: #11b5e5;
+    color: var(--alt-text-color);
+    border: 1px solid var(--main-border-color);
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* End new game button */
