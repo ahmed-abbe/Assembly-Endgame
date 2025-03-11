@@ -1,6 +1,7 @@
 /* Start variables */
 :root {
     --main-background-color: #282726;
+    --alt-bg-color: #1e1d1c;
     --main-green-color: #10a95b;
     --mian-red-color: #ec5d49;
     --main-text-color: #f9f4da;
@@ -17,7 +18,7 @@
 }
 body {
     font-family: "Hanken Grotesk", serif;
-    background-color: #1e1d1c;
+    background-color: var(--alt-bg-color);
     overflow-x: hidden;
 }
 .game {
@@ -46,12 +47,34 @@ header {
 }
 header .heading {
     font-size: 28px;
-    margin-block: 0 6px;
+    margin: 0;
 }
 header p {
     color: #8e8e8e;
     max-width: 350px;
-    margin: 0;
+    margin-block: 6px 12px;
+}
+header .game-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 7px;
+}
+@media (max-width: 767px) {
+    header .game-info {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+header .remaining-guesses,
+header .timer {
+    background-color: var(--alt-bg-color);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid white;
 }
 /* End header */
 
@@ -195,3 +218,18 @@ header p {
     cursor: pointer;
 }
 /* End new game button */
+
+/* Start anti confetti */
+.icon {
+    position: fixed;
+    top: -100%;
+    z-index: 9999;
+}
+
+@keyframes confetti {
+    100% {
+        top: 100%;
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+/* End anti confetti */
