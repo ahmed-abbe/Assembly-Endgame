@@ -3,7 +3,7 @@ import { words } from "../constants/words";
 // Get a random word from the words array
 export function getRandomWord() {
     // Get random Index
-    return words[RandomNumber(words.length)]; 
+    return words[randomNumber(words.length)]; 
 }
 
 // Get a random farewell message 
@@ -26,10 +26,10 @@ export function getFarewellMessage(language) {
         `Requiescat in pace, ${language}`
     ]
 
-    return messages[RandomNumber(messages.length)];
+    return messages[randomNumber(messages.length)];
 }
 
 // Get a random number 
-function RandomNumber(num) {
+export function randomNumber(num) {
     return Math.trunc(Math.random() * num)
 }
